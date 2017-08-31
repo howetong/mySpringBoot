@@ -6,9 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 import cn.tonghao.domain.Score;
+import cn.tonghao.domain.Student;
 import cn.tonghao.domain.User;
+import cn.tonghao.mapper.StudentMapper;
 import cn.tonghao.service.IScoreService;
+import cn.tonghao.service.IStudentService;
 import cn.tonghao.service.IUserService;
+import com.github.pagehelper.PageHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +24,14 @@ import javax.annotation.Resource;
 @RequestMapping("/hello")
 public class HelloController {
 
-    @Resource
+    @Autowired
     private IUserService userService;
 
     @Resource
     private IScoreService scoreService;
+
+    @Resource
+    private IStudentService stuService;
 
 
     @RequestMapping
@@ -50,4 +58,23 @@ public class HelloController {
         return scoreService.listScore();
 
     }
+
+    @RequestMapping("/listStudent")
+    public List<Student> listStudent() {
+        PageHelper.startPage(1,2);
+        return stuService.listStudent();
+
+    }
+
+    @RequestMapping("/getUser")
+    public Student getUser() {
+        return stuService.getUser();
+    }
+
+    @RequestMapping("/likeName")
+    public List<Student> likeName(@RequestParam String name) {
+        return stuService.likeName(name);
+
+    }
+
 }

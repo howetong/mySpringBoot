@@ -1,20 +1,17 @@
 package cn.tonghao;
 
-import cn.tonghao.servlet.MyServlet;
+import cn.tonghao.dataSource.DynamicDataSourceRegister;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import javax.servlet.ServletRegistration;
+import org.springframework.context.annotation.Import;
 
 /**
  * Created by tonghao on 2017/8/18.
  */
 @SpringBootApplication
 @ServletComponentScan
+@Import({DynamicDataSourceRegister.class})
 public class SpringBootSampleApplication {
 
     /*@Bean

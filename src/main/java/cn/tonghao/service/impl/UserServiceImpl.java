@@ -1,6 +1,8 @@
 package cn.tonghao.service.impl;
 
+import cn.tonghao.domain.Student;
 import cn.tonghao.domain.User;
+import cn.tonghao.mapper.StudentMapper;
 import cn.tonghao.service.IUserService;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,7 +16,7 @@ import java.util.List;
 /**
  * Created by tonghao on 2017/8/30.
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements IUserService {
 
     //jdbc方式

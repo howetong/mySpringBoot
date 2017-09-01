@@ -1,14 +1,8 @@
 package cn.tonghao.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import cn.tonghao.domain.Score;
 import cn.tonghao.domain.Student;
 import cn.tonghao.domain.User;
-import cn.tonghao.mapper.StudentMapper;
 import cn.tonghao.service.IScoreService;
 import cn.tonghao.service.IStudentService;
 import cn.tonghao.service.IUserService;
@@ -19,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/hello")

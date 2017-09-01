@@ -1,17 +1,16 @@
-package cn.tonghao.service;
+package cn.tonghao.dao;
 
-import cn.tonghao.dao.IScoreDao;
 import cn.tonghao.domain.Score;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created by tonghao on 2017/8/30.
+ * Created by tonghao on 2017/9/1.
  */
-public interface IScoreService{
+public interface IScoreDao extends CrudRepository<Score, Integer> {
 
+    @Query("select t from Score t ")
     List<Score> listScore();
 }
